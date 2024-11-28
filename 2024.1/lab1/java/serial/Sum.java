@@ -8,11 +8,13 @@ public class Sum {
 
     public static int sum(FileInputStream fis) throws IOException {
         
-	int byteRead;
+	
         int sum = 0;
         
-        while ((byteRead = fis.read()) != -1) {
+        int byteRead = fis.read();
+        while (byteRead != -1) {
         	sum += byteRead;
+            byteRead = fis.read();
         }
 
         return sum;
